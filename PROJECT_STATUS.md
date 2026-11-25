@@ -20,6 +20,12 @@
 - Hosting: GitHub Pages, repo Jayman48632/CentralCarpentry-Demo (public), branch main, root.
 - Versioning: version.js "Vx.x.x"+date, shown in footer. Bump on every push; commit msg prefixed w/ version; ALWAYS prompt user for msg.
 
+## V1.1.0 — 2026-11-25 (pushed)
+- Real job photos from user (lake home: before/after collage, porch ceiling, framing w/ lake view, finished exterior, flooring). Originals in scratchpad/images (1.webp–5.jpg).
+- Hero = 3 slides (lakehouse, framing, porch; worker cropped out of porch). New 'Project spotlight' section (#work) w/ 2016/2018/2026 collage + tags. About img = flooring (4:5). Placeholder SVGs removed.
+- WebP lg/sm via srcset; ~950 KB all images, first view ≈150 KB desktop / ≈70 KB phone + fonts.
+- Photos APPROVED by user for public use; spotlight copy accuracy (who did 2018 vs 2026 work).
+
 ## Blockers / pending
 - Repo does not exist yet → user creates empty repo on GitHub; then add_repo (push) + push.
 - Photos: Claude in Chrome N/A in cloud session (needs user's local Chrome). Unsplash bot wall (401 'checking your browser') blocks curl + headless Chromium — do NOT bypass. Plan: user downloads picks → uploads to repo photos-raw/ (or chat) → Claude converts to WebP + wires in.
