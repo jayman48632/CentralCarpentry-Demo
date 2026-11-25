@@ -1,0 +1,157 @@
+<title>Central Carpentry Fonts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&family=Libre+Baskerville:wght@700&family=Lato:wght@400;700&family=Manrope:wght@400;600;800&display=swap">
+<style>
+/* Layout: one wide card per pairing, stacked; each card = F1-palette homepage mock (left) + type specimen and load cost (right) */
+:root {
+  --bg: #F3F3F1; --fg: #1C1D1F; --muted: #5E6166; --line: #DADBD7; --card: #FFFFFF; --tag: #E8E9E5;
+  --ui: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* F1 palette (fixed, site colors) */
+  --navy: #1F3A5F; --paper: #F8F6F2; --ink: #2F3338; --copper: #B87333; --copper-dk: #9A5E26; --copper-lt: #D49563;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151618; --fg: #ECECEA; --muted: #A2A5AA; --line: #2C2E31; --card: #1E2023; --tag: #2A2C2F; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151618; --fg: #ECECEA; --muted: #A2A5AA; --line: #2C2E31; --card: #1E2023; --tag: #2A2C2F; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--ui); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 2rem 3rem }
+.wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 1.5rem }
+header h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .35rem; text-wrap: balance; letter-spacing: -.01em }
+header p { margin: 0; color: var(--muted); max-width: 70ch }
+
+.opt { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 14px }
+.opt-head { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap }
+.num { font-weight: 700; width: 1.9rem; height: 1.9rem; display: grid; place-items: center; border-radius: 6px; background: var(--tag); flex: none }
+.opt-head h2 { font-size: 1.1rem; margin: 0 }
+.badge { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: .15rem .45rem; border-radius: 4px; background: var(--tag); color: var(--muted) }
+.badge.pick { background: var(--navy); color: #fff }
+.feel { color: var(--muted); font-size: .88rem; flex-basis: 100% }
+
+.split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px; align-items: start }
+@media (max-width: 760px) { .split { grid-template-columns: minmax(0, 1fr) } }
+
+/* ---- Mock (fixed F1 site colors) ---- */
+.mock { border-radius: 8px; overflow: hidden; background: var(--paper); color: var(--ink); border: 1px solid rgba(0,0,0,.08); font-family: var(--b) }
+.m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; gap: 10px }
+.m-logo { font-family: var(--h); font-weight: var(--hw); font-size: 1rem; color: var(--navy); letter-spacing: var(--hls, 0); text-transform: var(--htt, none); white-space: nowrap }
+.m-links { font-size: .74rem; display: flex; gap: 12px; opacity: .8 }
+.m-hero { position: relative; display: grid; align-content: end; min-height: 190px; padding: 18px 16px; color: #fff; overflow: hidden }
+.m-hero svg { position: absolute; inset: 0; width: 100%; height: 100% }
+.m-hero::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(31,58,95,.92) 0%, rgba(31,58,95,.55) 62%, rgba(31,58,95,.05) 100%) }
+.m-hero > div { position: relative; z-index: 1; display: grid; gap: 8px; max-width: 78% }
+.m-hero h3 { font-family: var(--h); font-weight: var(--hw); font-size: calc(1.45rem * var(--hs, 1)); line-height: 1.12; margin: 0; letter-spacing: var(--hls, 0); text-transform: var(--htt, none); text-wrap: balance }
+.m-hero p { margin: 0; font-size: .82rem; opacity: .92; max-width: 40ch }
+.m-btn { justify-self: start; font-family: var(--b); font-size: .76rem; font-weight: 700; padding: 7px 12px; border-radius: 4px; background: var(--copper); color: #fff }
+.m-body { padding: 14px 16px 16px; display: grid; gap: 10px }
+.m-eyebrow { font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--copper-dk) }
+.m-body h4 { font-family: var(--h); font-weight: var(--hw); font-size: calc(1.15rem * var(--hs, 1)); margin: -4px 0 2px; color: var(--navy); letter-spacing: var(--hls, 0); text-transform: var(--htt, none) }
+.m-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px }
+@media (max-width: 420px) { .m-tiles { grid-template-columns: minmax(0, 1fr) } }
+.m-tile { background: #EEF0F3; border-radius: 6px; padding: 10px; display: grid; gap: 4px; align-content: start }
+.m-tile b { font-family: var(--h); font-weight: var(--hw); font-size: calc(.86rem * var(--hs, 1)); color: var(--navy); letter-spacing: var(--hls, 0); text-transform: var(--htt, none) }
+.m-tile span { font-size: .72rem; line-height: 1.4 }
+.m-foot { background: var(--ink); color: var(--paper); padding: 10px 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: .74rem }
+.m-foot strong { color: var(--copper-lt) }
+
+/* ---- Specimen ---- */
+.spec { display: grid; gap: 12px; min-width: 0 }
+.spec-h { font-family: var(--h); font-weight: var(--hw); font-size: calc(2.1rem * var(--hs, 1)); line-height: 1.05; letter-spacing: var(--hls, 0); text-transform: var(--htt, none); margin: 0; text-wrap: balance }
+.spec-b { font-family: var(--b); font-size: 1rem; line-height: 1.6; margin: 0 }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: .84rem; margin: 0; border-top: 1px solid var(--line); padding-top: 10px }
+.facts dt { color: var(--muted) }
+.facts dd { margin: 0; font-variant-numeric: tabular-nums }
+footer { color: var(--muted); font-size: .85rem }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FB4C4"/><stop offset="1" stop-color="#DCE3E6"/></linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C8B5A"/><stop offset="1" stop-color="#55603C"/></linearGradient>
+  </defs>
+  <symbol id="barn" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+    <rect width="400" height="150" fill="url(#sky)"/>
+    <path d="M0 112 Q120 98 220 108 T400 104 V150 H0Z" fill="url(#field)"/>
+    <path d="M200 112 V72 L265 46 L330 72 V112Z" fill="#6E5A44"/>
+    <path d="M195 74 L265 43 L335 74 L330 76 L265 49 L200 76Z" fill="#8E9AA3"/>
+    <g stroke="#3E3328" stroke-width="2.4"><path d="M214 112 V70 M236 112 V61 M258 112 V52 M280 112 V55 M302 112 V64 M322 112 V73"/></g>
+    <g stroke="#3E3328" stroke-width="1.2"><path d="M200 84 H330 M200 97 H330"/></g>
+    <rect x="248" y="86" width="34" height="26" fill="#2F271F"/>
+    <rect x="350" y="104" width="40" height="8" fill="#B08D62"/><rect x="354" y="98" width="32" height="6" fill="#C29D6E"/>
+  </symbol>
+</svg>
+
+<template id="mock-tpl">
+  <div class="mock">
+    <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+    <div class="m-hero"><svg><use href="#barn"/></svg><div>
+      <h3>Pole barns and homes, built by hand in Clare County</h3>
+      <p>Family-run Amish carpentry. Honest prices, solid work, and a crew that shows up when we say we will.</p>
+      <span class="m-btn">Call 989-487-5792</span></div></div>
+    <div class="m-body"><span class="m-eyebrow">What we build</span><h4>Our services</h4>
+      <div class="m-tiles">
+        <div class="m-tile"><b>New Construction</b><span>Homes, shops, and garages from the footings up.</span></div>
+        <div class="m-tile"><b>Pole Barns</b><span>Post-frame barns for storage, livestock, and equipment.</span></div>
+        <div class="m-tile"><b>Steel Roofing</b><span>Ribbed and standing-seam panels that shed snow.</span></div>
+      </div></div>
+    <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI 48617</span><strong>989-487-5792</strong></div>
+  </div>
+</template>
+
+<div class="wrap">
+  <header>
+    <h1>Central Carpentry font pairings</h1>
+    <p>All five use the F1 Navy &amp; Copper palette. The left side is the homepage mock; the right side shows the heading and body fonts at larger size, plus what each pairing adds to page load. Sizes are estimates for Latin-only WOFF2 files hosted with the site.</p>
+  </header>
+
+  <article class="opt" style="--h:'Bitter', Georgia, serif; --b:'Source Sans 3', system-ui, sans-serif; --hw:700">
+    <div class="opt-head"><span class="num">1</span><h2>Bitter + Source Sans 3</h2><span class="badge pick">Recommended</span><span class="feel">Slab serif headings that feel sturdy and workmanlike, with a clear, friendly body font.</span></div>
+    <div class="split"><div class="slot"></div>
+      <div class="spec"><p class="spec-h">Built square, level, and plumb.</p>
+        <p class="spec-b">We frame, roof, and side buildings across Clare County. Every pole barn is set on treated posts, braced by hand, and finished with steel that lasts decades.</p>
+        <dl class="facts"><dt>Headings</dt><dd>Bitter 700</dd><dt>Body</dt><dd>Source Sans 3, 400 / 600</dd><dt>Font files</dt><dd>3</dd><dt>Est. size</dt><dd>≈ 60–75 KB</dd></dl></div></div>
+  </article>
+
+  <article class="opt" style="--h:'Fraunces', Georgia, serif; --b:'Inter', system-ui, sans-serif; --hw:600">
+    <div class="opt-head"><span class="num">2</span><h2>Fraunces + Inter</h2><span class="feel">Warm, softly classic headings with a modern, very readable body. The most "crafted" look.</span></div>
+    <div class="split"><div class="slot"></div>
+      <div class="spec"><p class="spec-h">Built square, level, and plumb.</p>
+        <p class="spec-b">We frame, roof, and side buildings across Clare County. Every pole barn is set on treated posts, braced by hand, and finished with steel that lasts decades.</p>
+        <dl class="facts"><dt>Headings</dt><dd>Fraunces 600</dd><dt>Body</dt><dd>Inter, 400 / 600</dd><dt>Font files</dt><dd>3</dd><dt>Est. size</dt><dd>≈ 80–110 KB (Fraunces is the heaviest here)</dd></dl></div></div>
+  </article>
+
+  <article class="opt" style="--h:'Barlow Condensed', 'Arial Narrow', sans-serif; --b:'Barlow', system-ui, sans-serif; --hw:700; --hs:1.12; --hls:.01em; --htt:uppercase">
+    <div class="opt-head"><span class="num">3</span><h2>Barlow Condensed + Barlow</h2><span class="feel">Bold, condensed, all-caps headings like job-site signage. Strong and industrial.</span></div>
+    <div class="split"><div class="slot"></div>
+      <div class="spec"><p class="spec-h">Built square, level, and plumb.</p>
+        <p class="spec-b">We frame, roof, and side buildings across Clare County. Every pole barn is set on treated posts, braced by hand, and finished with steel that lasts decades.</p>
+        <dl class="facts"><dt>Headings</dt><dd>Barlow Condensed 700, uppercase</dd><dt>Body</dt><dd>Barlow, 400 / 600</dd><dt>Font files</dt><dd>3</dd><dt>Est. size</dt><dd>≈ 50–65 KB</dd></dl></div></div>
+  </article>
+
+  <article class="opt" style="--h:'Libre Baskerville', Georgia, serif; --b:'Lato', system-ui, sans-serif; --hw:700; --hs:.9">
+    <div class="opt-head"><span class="num">4</span><h2>Libre Baskerville + Lato</h2><span class="feel">Traditional book-style serif. Reads as established and trustworthy, a little formal.</span></div>
+    <div class="split"><div class="slot"></div>
+      <div class="spec"><p class="spec-h">Built square, level, and plumb.</p>
+        <p class="spec-b">We frame, roof, and side buildings across Clare County. Every pole barn is set on treated posts, braced by hand, and finished with steel that lasts decades.</p>
+        <dl class="facts"><dt>Headings</dt><dd>Libre Baskerville 700</dd><dt>Body</dt><dd>Lato, 400 / 700</dd><dt>Font files</dt><dd>3</dd><dt>Est. size</dt><dd>≈ 65–80 KB</dd></dl></div></div>
+  </article>
+
+  <article class="opt" style="--h:'Manrope', system-ui, sans-serif; --b:'Manrope', system-ui, sans-serif; --hw:800; --hls:-.015em">
+    <div class="opt-head"><span class="num">5</span><h2>Manrope (one family)</h2><span class="feel">Clean geometric sans throughout. Modern and tidy, but the least rustic of the five.</span></div>
+    <div class="split"><div class="slot"></div>
+      <div class="spec"><p class="spec-h">Built square, level, and plumb.</p>
+        <p class="spec-b">We frame, roof, and side buildings across Clare County. Every pole barn is set on treated posts, braced by hand, and finished with steel that lasts decades.</p>
+        <dl class="facts"><dt>Headings</dt><dd>Manrope 800</dd><dt>Body</dt><dd>Manrope, 400 / 600</dd><dt>Font files</dt><dd>1 (variable font)</dd><dt>Est. size</dt><dd>≈ 30–45 KB (lightest)</dd></dl></div></div>
+  </article>
+
+  <footer>For scale: one hero photo will be roughly 80–150 KB, so any of these pairings keeps the full page well under the 500 KB target.</footer>
+</div>
+
+<script>
+  const tpl = document.getElementById('mock-tpl');
+  document.querySelectorAll('.slot').forEach(s => s.replaceWith(tpl.content.cloneNode(true)));
+</script>

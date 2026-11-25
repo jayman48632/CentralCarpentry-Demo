@@ -1,0 +1,29 @@
+# PROJECT_STATUS — Central Carpentry demo site
+
+## Purpose
+- Demo marketing site for Amish construction co. (pitch to owners). Static, responsive, fast.
+- Co: Central Carpentry · 7341 S. Athey Ave, Clare, MI 48617 · 989-487-5792
+- ZIP CONFIRMED 48617 (user's original 48632 was an error).
+
+## Current version
+- V1.0.0 — 2026-11-25 (version.js). Built, staged in local git, NOT committed/pushed yet.
+- Preview artifact: https://claude.ai/artifact/S1Pociin6AF4EYp5NMLwzy (src scratchpad/preview/site.html = index.html minus doc wrapper)
+
+## Decisions
+- Layout ref: onepagelove.com/marsden-lite (layout yes, orange no).
+- COLOR: F1 Navy & Copper — primary #1F3A5F, bg #F8F6F2, text #2F3338, accent #B87333 (accent text #9A5E26, on-dark #D49563), tint #EEF0F3.
+- FONTS: #4 Libre Baskerville 700 (headings) + Lato 400/700 (body). Self-hosted woff2, ~67 KB.
+- Q1–Q10 defaults accepted: one-page; no-face stock photos; text logo; drafted tagline; "Clare County & surrounding areas"; "call or leave msg"; phone only/tap-to-call; no form; no map embed (address → Google Maps link); GitHub Pages.
+- Stack: plain HTML/CSS/vanilla JS, no build. Total ≈136 KB.
+- Hosting: GitHub Pages, repo Jayman48632/CentralCarpentry-Demo (public), branch main, root.
+- Versioning: version.js "Vx.x.x"+date, shown in footer. Bump on every push; commit msg prefixed w/ version; ALWAYS prompt user for msg.
+
+## Blockers / pending
+- Repo does not exist yet → user creates empty repo on GitHub; then add_repo (push) + push.
+- Photos: Unsplash hosts allowed in env (unsplash.com, images.unsplash.com) but auto-mode denied scraping Unsplash search endpoint. Current hero/about images = drawn SVG placeholders (img/work-1..4.svg). Options: user supplies photos / picks Unsplash URLs / approves fetch.
+- Copy is draft (tagline, about, facts strip) — owners to review; no unverified claims (no "free estimates", no years in business).
+
+## Files
+- index.html, css/site.css, js/main.js (slideshow 6s, pause on hover/focus, reduced-motion = no auto), version.js
+- fonts/ (woff2 + README license note), img/ (placeholder SVGs), .nojekyll, README.md
+- design/color-options.html (https://claude.ai/artifact/PM2Ary5AfeBd3LFhR1pai1), design/font-options.html (https://claude.ai/artifact/JR3qUKCtVnthWtew4JD449)

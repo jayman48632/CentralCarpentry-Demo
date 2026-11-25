@@ -1,0 +1,243 @@
+<title>Central Carpentry Palettes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: page chrome is neutral; each card is a mini Marsden-style homepage (nav / photo hero / services / contact strip) locked to its own palette */
+:root {
+  --bg: #F3F3F1; --fg: #1C1D1F; --muted: #5E6166; --line: #DADBD7; --card: #FFFFFF; --tag: #E8E9E5;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151618; --fg: #ECECEA; --muted: #A2A5AA; --line: #2C2E31; --card: #1E2023; --tag: #2A2C2F; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151618; --fg: #ECECEA; --muted: #A2A5AA; --line: #2C2E31; --card: #1E2023; --tag: #2A2C2F; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 2rem 3rem }
+.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 1.75rem }
+header h1 { font-family: var(--font-head); font-size: clamp(1.6rem, 3vw, 2.1rem); margin: 0 0 .35rem; text-wrap: balance; letter-spacing: -.01em }
+header p { margin: 0; color: var(--muted); max-width: 68ch }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 1.25rem }
+.opt { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 12px; min-width: 0 }
+.opt-head { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap }
+.letter { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; width: 1.9rem; height: 1.9rem; display: grid; place-items: center;
+  border-radius: 6px; background: var(--tag); flex: none; align-self: center }
+.opt-head h2 { font-family: var(--font-head); font-size: 1.1rem; margin: 0 }
+.feel { color: var(--muted); font-size: .85rem; flex-basis: 100% ; margin-left: 2.5rem; margin-top: -.35rem }
+.badge { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: .15rem .45rem; border-radius: 4px;
+  background: var(--tag); color: var(--muted) }
+.badge.new { background: #2F6F4E; color: #fff }
+.badge.warn { background: #8A5A12; color: #fff }
+
+/* ---- Mini homepage (single-look per card, colors from inline vars) ---- */
+.mock { border-radius: 8px; overflow: hidden; background: var(--m-bg); color: var(--m-tx); border: 1px solid rgba(0,0,0,.08); font-family: var(--font-body) }
+.m-nav { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; background: var(--m-bg); gap: 8px }
+.m-logo { font-weight: 700; font-size: .8rem; color: var(--m-p); letter-spacing: .01em; white-space: nowrap }
+.m-links { font-size: .66rem; color: var(--m-tx); opacity: .75; display: flex; gap: 10px }
+.m-hero { position: relative; height: 150px; display: grid; align-content: end; padding: 14px; color: #fff; overflow: hidden }
+.m-hero svg { position: absolute; inset: 0; width: 100%; height: 100% }
+.m-hero::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--m-p) 88%, transparent) 0%, color-mix(in srgb, var(--m-p) 45%, transparent) 60%, transparent 100%) }
+.m-hero > div { position: relative; z-index: 1; display: grid; gap: 6px; max-width: 75% }
+.m-hero b { font-size: 1.02rem; line-height: 1.2; text-wrap: balance }
+.m-btn { justify-self: start; font-size: .66rem; font-weight: 700; padding: 5px 10px; border-radius: 4px; background: var(--m-ac); color: var(--m-onac) }
+.m-body { padding: 12px; display: grid; gap: 8px }
+.m-eyebrow { font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--m-ac2, var(--m-ac)) }
+.m-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px }
+.m-tile { background: color-mix(in srgb, var(--m-p) 7%, var(--m-bg)); border-radius: 5px; padding: 8px 7px; display: grid; gap: 5px; min-width: 0 }
+.m-ico { width: 18px; height: 18px; border-radius: 4px; background: var(--m-p) }
+.m-tile span { font-size: .64rem; font-weight: 600; line-height: 1.2 }
+.m-foot { background: var(--m-tx); color: var(--m-bg); padding: 9px 12px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .62rem }
+.m-foot strong { color: var(--m-ac2, var(--m-ac)) }
+
+/* ---- Swatches ---- */
+.sw { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px }
+.chip { display: grid; gap: 3px; min-width: 0 }
+.chip i { display: block; height: 34px; border-radius: 6px; border: 1px solid var(--line) }
+.chip small { font-size: .66rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em }
+.chip code { font-size: .74rem; font-variant-numeric: tabular-nums; font-family: ui-monospace, "SF Mono", Consolas, monospace }
+.note { font-size: .82rem; color: var(--muted); margin: 0 }
+
+footer { color: var(--muted); font-size: .85rem }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FB4C4"/><stop offset="1" stop-color="#DCE3E6"/></linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C8B5A"/><stop offset="1" stop-color="#55603C"/></linearGradient>
+  </defs>
+  <symbol id="barn" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
+    <rect width="400" height="150" fill="url(#sky)"/>
+    <path d="M0 112 Q120 98 220 108 T400 104 V150 H0Z" fill="url(#field)"/>
+    <!-- pole barn shell under construction -->
+    <path d="M200 112 V72 L265 46 L330 72 V112Z" fill="#6E5A44"/>
+    <path d="M195 74 L265 43 L335 74 L330 76 L265 49 L200 76Z" fill="#8E9AA3"/>
+    <g stroke="#3E3328" stroke-width="2.4"><path d="M214 112 V70 M236 112 V61 M258 112 V52 M280 112 V55 M302 112 V64 M322 112 V73"/></g>
+    <g stroke="#3E3328" stroke-width="1.2"><path d="M200 84 H330 M200 97 H330"/></g>
+    <rect x="248" y="86" width="34" height="26" fill="#2F271F"/>
+    <!-- lumber stack -->
+    <rect x="350" y="104" width="40" height="8" fill="#B08D62"/><rect x="354" y="98" width="32" height="6" fill="#C29D6E"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <header>
+    <h1>Central Carpentry color schemes</h1>
+    <p>Each card is a small mock of the homepage in the Marsden layout: nav bar, photo hero with a color overlay, a services row, and the contact strip at the bottom. Fonts are kept neutral on purpose so you judge color only. Pick a letter and we'll do fonts next.</p>
+  </header>
+
+  <section class="grid">
+
+    <!-- A -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">A</span><h2>Barn Red &amp; Oak</h2><span class="feel">Traditional and warm. Reads as "barn" immediately.</span></div>
+      <div class="mock" style="--m-p:#8B2E24;--m-bg:#F5EFE6;--m-tx:#3B2F2A;--m-ac:#C9A66B;--m-onac:#2A211C;--m-ac2:#8F6E3A">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong>989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#8B2E24"></i><small>Primary</small><code>#8B2E24</code></div>
+        <div class="chip"><i style="background:#F5EFE6"></i><small>Background</small><code>#F5EFE6</code></div>
+        <div class="chip"><i style="background:#3B2F2A"></i><small>Text</small><code>#3B2F2A</code></div>
+        <div class="chip"><i style="background:#C9A66B"></i><small>Accent</small><code>#C9A66B</code></div>
+      </div>
+    </article>
+
+    <!-- B -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">B</span><h2>Forest &amp; Timber</h2><span class="badge">Recommended</span><span class="feel">Earthy and calm. Fits rural mid-Michigan.</span></div>
+      <div class="mock" style="--m-p:#2F4A3A;--m-bg:#F4F1EA;--m-tx:#2B2B2B;--m-ac:#D9A441;--m-onac:#1F1A10;--m-ac2:#93681A">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#D9A441">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#2F4A3A"></i><small>Primary</small><code>#2F4A3A</code></div>
+        <div class="chip"><i style="background:#F4F1EA"></i><small>Background</small><code>#F4F1EA</code></div>
+        <div class="chip"><i style="background:#2B2B2B"></i><small>Text</small><code>#2B2B2B</code></div>
+        <div class="chip"><i style="background:#D9A441"></i><small>Accent</small><code>#D9A441</code></div>
+      </div>
+    </article>
+
+    <!-- C -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">C</span><h2>Slate &amp; Copper</h2><span class="badge warn">Has orange</span><span class="feel">Most modern. The copper accent is close to Marsden's orange.</span></div>
+      <div class="mock" style="--m-p:#2E3A46;--m-bg:#F7F7F5;--m-tx:#1E1E1E;--m-ac:#D9772B;--m-onac:#FFFFFF;--m-ac2:#B35E1C">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#E38A44">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#2E3A46"></i><small>Primary</small><code>#2E3A46</code></div>
+        <div class="chip"><i style="background:#F7F7F5"></i><small>Background</small><code>#F7F7F5</code></div>
+        <div class="chip"><i style="background:#1E1E1E"></i><small>Text</small><code>#1E1E1E</code></div>
+        <div class="chip"><i style="background:#D9772B"></i><small>Accent</small><code>#D9772B</code></div>
+      </div>
+    </article>
+
+    <!-- C2 -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">C2</span><h2>Slate &amp; Brass</h2><span class="badge new">New</span><span class="feel">Same modern slate as C, with orange swapped for a muted brass.</span></div>
+      <div class="mock" style="--m-p:#2E3A46;--m-bg:#F7F7F5;--m-tx:#1E1E1E;--m-ac:#B8975A;--m-onac:#1E1A12;--m-ac2:#8A6D36">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#CDB079">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#2E3A46"></i><small>Primary</small><code>#2E3A46</code></div>
+        <div class="chip"><i style="background:#F7F7F5"></i><small>Background</small><code>#F7F7F5</code></div>
+        <div class="chip"><i style="background:#1E1E1E"></i><small>Text</small><code>#1E1E1E</code></div>
+        <div class="chip"><i style="background:#B8975A"></i><small>Accent</small><code>#B8975A</code></div>
+      </div>
+    </article>
+
+    <!-- D -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">D</span><h2>Heritage Navy &amp; Wheat</h2><span class="feel">Trustworthy and conservative.</span></div>
+      <div class="mock" style="--m-p:#1F3A5F;--m-bg:#FAF6EE;--m-tx:#3A3A3A;--m-ac:#C8A96A;--m-onac:#1E1A12;--m-ac2:#8C6E32">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#D7BC84">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#1F3A5F"></i><small>Primary</small><code>#1F3A5F</code></div>
+        <div class="chip"><i style="background:#FAF6EE"></i><small>Background</small><code>#FAF6EE</code></div>
+        <div class="chip"><i style="background:#3A3A3A"></i><small>Text</small><code>#3A3A3A</code></div>
+        <div class="chip"><i style="background:#C8A96A"></i><small>Accent</small><code>#C8A96A</code></div>
+      </div>
+    </article>
+
+    <!-- F1 -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">F1</span><h2>Navy &amp; Copper</h2><span class="badge new">New</span><span class="feel">Navy from D with true metal copper. Browner and quieter than C's copper.</span></div>
+      <div class="mock" style="--m-p:#1F3A5F;--m-bg:#F8F6F2;--m-tx:#2F3338;--m-ac:#B87333;--m-onac:#FFFFFF;--m-ac2:#9A5E26">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#D49563">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#1F3A5F"></i><small>Primary</small><code>#1F3A5F</code></div>
+        <div class="chip"><i style="background:#F8F6F2"></i><small>Background</small><code>#F8F6F2</code></div>
+        <div class="chip"><i style="background:#2F3338"></i><small>Text</small><code>#2F3338</code></div>
+        <div class="chip"><i style="background:#B87333"></i><small>Accent</small><code>#B87333</code></div>
+      </div>
+    </article>
+
+    <!-- F2 -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">F2</span><h2>Navy &amp; Bright Copper</h2><span class="badge warn">Has orange</span><span class="feel">Navy from D with C's brighter copper, for comparison with F1.</span></div>
+      <div class="mock" style="--m-p:#1F3A5F;--m-bg:#F8F6F2;--m-tx:#2F3338;--m-ac:#D9772B;--m-onac:#FFFFFF;--m-ac2:#B35E1C">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#E38A44">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#1F3A5F"></i><small>Primary</small><code>#1F3A5F</code></div>
+        <div class="chip"><i style="background:#F8F6F2"></i><small>Background</small><code>#F8F6F2</code></div>
+        <div class="chip"><i style="background:#2F3338"></i><small>Text</small><code>#2F3338</code></div>
+        <div class="chip"><i style="background:#D9772B"></i><small>Accent</small><code>#D9772B</code></div>
+      </div>
+    </article>
+
+    <!-- E -->
+    <article class="opt">
+      <div class="opt-head"><span class="letter">E</span><h2>Charcoal &amp; Natural Wood</h2><span class="feel">Minimal and high contrast. Sienna is a red-brown, not orange, but it leans that way.</span></div>
+      <div class="mock" style="--m-p:#222222;--m-bg:#EDE6DA;--m-tx:#222222;--m-ac:#A0522D;--m-onac:#FFFFFF;--m-ac2:#A0522D">
+        <div class="m-nav"><span class="m-logo">Central Carpentry</span><span class="m-links"><span>Services</span><span>Work</span><span>Contact</span></span></div>
+        <div class="m-hero"><svg><use href="#barn"/></svg><div><b>Pole barns and homes, built by hand in Clare County</b><span class="m-btn">Call 989-487-5792</span></div></div>
+        <div class="m-body"><span class="m-eyebrow">What we build</span>
+          <div class="m-tiles"><div class="m-tile"><i class="m-ico"></i><span>New Construction</span></div><div class="m-tile"><i class="m-ico"></i><span>Pole Barns</span></div><div class="m-tile"><i class="m-ico"></i><span>Steel Roofing</span></div></div></div>
+        <div class="m-foot"><span>7341 S. Athey Ave, Clare, MI</span><strong style="color:#D08A63">989-487-5792</strong></div>
+      </div>
+      <div class="sw">
+        <div class="chip"><i style="background:#222222"></i><small>Primary</small><code>#222222</code></div>
+        <div class="chip"><i style="background:#EDE6DA"></i><small>Background</small><code>#EDE6DA</code></div>
+        <div class="chip"><i style="background:#222222"></i><small>Text</small><code>#222222</code></div>
+        <div class="chip"><i style="background:#A0522D"></i><small>Accent</small><code>#A0522D</code></div>
+      </div>
+    </article>
+
+  </section>
+
+  <footer>The barn drawing stands in for a real photo. The overlay on the hero shows how each primary color tints a photo, which is how the Marsden layout handles its hero.</footer>
+</div>
