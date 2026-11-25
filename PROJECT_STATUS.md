@@ -6,7 +6,9 @@
 - ZIP CONFIRMED 48617 (user's original 48632 was an error).
 
 ## Current version
-- V1.0.0 — 2026-11-25 (version.js). Built, staged in local git, NOT committed/pushed yet.
+- V1.0.1 — 2026-11-25 staged: roofing = ribbed steel ONLY (no standing seam) + status notes. Awaiting commit msg. V1.0.0 PUSHED to github.com/jayman48632/CentralCarpentry-Demo main (commit e56a82e).
+- Pages: session proxy blocks Pages API → user enables manually (Settings → Pages → main / root). URL: https://jayman48632.github.io/CentralCarpentry-Demo/
+- Repo creation also blocked from session (user must create repos; then add_repo push).
 - Preview artifact: https://claude.ai/artifact/S1Pociin6AF4EYp5NMLwzy (src scratchpad/preview/site.html = index.html minus doc wrapper)
 
 ## Decisions
@@ -20,7 +22,8 @@
 
 ## Blockers / pending
 - Repo does not exist yet → user creates empty repo on GitHub; then add_repo (push) + push.
-- Photos: Unsplash hosts allowed in env (unsplash.com, images.unsplash.com) but auto-mode denied scraping Unsplash search endpoint. Current hero/about images = drawn SVG placeholders (img/work-1..4.svg). Options: user supplies photos / picks Unsplash URLs / approves fetch.
+- Photos: Claude in Chrome N/A in cloud session (needs user's local Chrome). Unsplash bot wall (401 'checking your browser') blocks curl + headless Chromium — do NOT bypass. Plan: user downloads picks → uploads to repo photos-raw/ (or chat) → Claude converts to WebP + wires in.
+- (old) Unsplash hosts allowed in env (unsplash.com, images.unsplash.com) but auto-mode denied scraping Unsplash search endpoint. Current hero/about images = drawn SVG placeholders (img/work-1..4.svg). Options: user supplies photos / picks Unsplash URLs / approves fetch.
 - Copy is draft (tagline, about, facts strip) — owners to review; no unverified claims (no "free estimates", no years in business).
 
 ## Files
