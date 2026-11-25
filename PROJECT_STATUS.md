@@ -24,7 +24,8 @@
 - Real job photos from user (lake home: before/after collage, porch ceiling, framing w/ lake view, finished exterior, flooring). Originals in scratchpad/images (1.webp–5.jpg).
 - Hero = 3 slides (lakehouse, framing, porch; worker cropped out of porch). New 'Project spotlight' section (#work) w/ 2016/2018/2026 collage + tags. About img = flooring (4:5). Placeholder SVGs removed.
 - WebP lg/sm via srcset; ~950 KB all images, first view ≈150 KB desktop / ≈70 KB phone + fonts.
-- Photos APPROVED by user for public use; spotlight copy accuracy (who did 2018 vs 2026 work).
+- Photos APPROVED by user for public use.
+- V1.1.1 PUSHED: spotlight copy corrected — Central Carpentry did ONLY the 2026 addition/remodel (not 2016 build, not 2018 reno/steel roof). Tags: Addition, Remodel, Framing, Siding, Windows, Flooring.
 
 ## Blockers / pending
 - Repo does not exist yet → user creates empty repo on GitHub; then add_repo (push) + push.
